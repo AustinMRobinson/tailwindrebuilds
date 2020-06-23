@@ -12,12 +12,28 @@ import { faUser as farUser } from '@fortawesome/free-regular-svg-icons'
 // Filled icons
 import { faArrowLeft, faArrowRight, faCog, faHeart, faBell, faSearch, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeIn = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+          delay: 0.2,
+          duration: 0.2,
+          ease: easing
+      }
+    }
+};
+
 const Header = () => {
   return (
     <header className="z-30 inset-x-0 top-0 relative py-2 px-3 bg-gray-800 border-b-2 border-gray-900">
       <nav className="flex items-center justify-between space-x-4">
         <div className="leading flex w-1/2 md:w-1/3 items-center justify-start sm:space-x-8 md:space-x-4 lg:space-x-8 text-sm xl:text-lg">
-          <a href="" className="flex items-center justify-center">
+          <a href="#" className="flex items-center justify-center">
             <svg width="144" height="168" viewBox="0 0 144 168" fill="none" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30.5 0L0.5 30V138H36.5V168L66.5 138H90L144 84V0H30.5Z" fill="#8552F6"/>
                 <path d="M36 102V12H132V78L108 102H84L59.5 126.5V102H36Z" fill="white"/>
@@ -26,10 +42,10 @@ const Header = () => {
             </svg>
           </a>
           <div className="nav-menu flex items-center space-x-8 md:space-x-4 xl:space-x-10">
-            <a href="" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Following</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
-            <a href="" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Browse</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
-            <a href="" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Esports</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
-            <a href="" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Music</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
+            <a href="#" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Following</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
+            <a href="#" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Browse</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
+            <a href="#" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Esports</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
+            <a href="#" className="transition ease-in-out duration-200 hover:text-purple-400"><span className="hidden md:block">Music</span><div className="w-5 h-5 block md:hidden rounded bg-white"></div></a>
             <button className="p-2 hidden md:block rounded-lg transition ease-in-out duration-300 hover:bg-gray-600">
                 <div className="w-4 h-4 flex items-center justify-center">
                     <FontAwesomeIcon icon={faEllipsisH} />
@@ -76,7 +92,7 @@ const Header = () => {
 const SideMenu = () => {
   return (
     <div className="z-20 sticky inset-y-0 left-0 md:w-12 lg:w-64 bg-gray-700">
-      <div className="wrapper flex flex-col space-y-4 h-full justify-between">
+      <motion.div variants={fadeIn} className="wrapper flex flex-col space-y-4 h-full justify-between">
         <nav className="space-y-2">
           <div className="section">
             <div className="header py-1 px-2 flex items-center justify-center lg:justify-between">
@@ -89,7 +105,7 @@ const SideMenu = () => {
               <div className="w-4 h-4 rounded bg-white md:block lg:hidden"></div>
             </div>
             <div className="channels">
-              <a href="" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
+              <a href="#" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
                 <div className="leading space-x-3 flex items-center">
                   <img src="" alt="" className="w-8 h-8 rounded-full bg-orange-500"/>
                   <div className="channel-info hidden lg:block">
@@ -102,7 +118,7 @@ const SideMenu = () => {
                   <p className="text-xs">24.23K</p>
                 </div>
               </a>
-              <a href="" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
+              <a href="#" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
                 <div className="leading space-x-3 flex items-center">
                   <img src="" alt="" className="w-8 h-8 rounded-full bg-yellow-500"/>
                   <div className="channel-info hidden lg:block">
@@ -115,7 +131,7 @@ const SideMenu = () => {
                   <p className="text-xs">3.9K</p>
                 </div>
               </a>
-              <a href="" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
+              <a href="#" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
                 <div className="leading space-x-3 flex items-center">
                   <img src="" alt="" className="w-8 h-8 rounded-full bg-green-500"/>
                   <div className="channel-info hidden lg:block">
@@ -128,7 +144,7 @@ const SideMenu = () => {
                   <p className="text-xs">1.2K</p>
                 </div>
               </a>
-              <a href="" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
+              <a href="#" className="channel py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
                 <div className="leading space-x-3 flex items-center">
                   <img src="" alt="" className="w-8 h-8 rounded-full bg-blue-500"/>
                   <div className="channel-info hidden lg:block">
@@ -142,7 +158,7 @@ const SideMenu = () => {
                 </div>
               </a>
               <div className="show-more py-2 pl-2 pr-3 hidden lg:block">
-                <a href="" className="text-xs text-purple-500 hover:underline">Show More</a>
+                <a href="#" className="text-xs text-purple-500 hover:underline">Show More</a>
               </div>
             </div>
           </div>
@@ -152,7 +168,7 @@ const SideMenu = () => {
               <div className="w-4 h-4 rounded bg-white xs:block lg:hidden"></div>
             </div>
             <div className="friends">
-              <a href="" className="friend py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
+              <a href="#" className="friend py-2 pl-2 pr-3 flex items-start justify-between hover:bg-gray-600 hover:bg-opacity-25">
                 <div className="leading space-x-3 flex items-center">
                   <img src="" alt="" className="w-8 h-8 rounded-full bg-orange-500"/>
                   <div className="friend-info hidden lg:block">
@@ -167,7 +183,7 @@ const SideMenu = () => {
         <div className="border-t border-gray-600 p-2">
           <input type="text" placeholder="Search to add friends" className="w-full flex-grow px-2 py-1 text-xs rounded text-white placeholder-gray-400 bg-gray-600 outline-none border-2 border-transparent focus:border-purple-500 focus:bg-gray-900"/>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -185,20 +201,20 @@ const ChannelContent = () => {
             allowfullscreen="true">
         </iframe> */}
       </div>
-      <div className="player-info flex py-4 pl-3 pr-5 items-start justify-between">
+      <motion.div variants={fadeIn} className="player-info flex py-4 pl-3 pr-5 items-start justify-between">
         <div className="leading flex items-center space-x-3">
           <a href="avatar"><div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-800"><FontAwesomeIcon icon={farUser} className="text-2xl"/></div></a>
           <div className="stream-info flex flex-col font-semibold">
             <h3 className="leading-tight">summit1G</h3>
             <p className="text-sm">gta chillin [ @summit1g ]</p>
             <div className="metadata flex flex-wrap mt-1 text-sm">
-              <a href="" className="text-purple-500 font-normal mr-4">Grand Theft Auto V</a>
+              <a href="#" className="text-purple-500 font-normal mr-4">Grand Theft Auto V</a>
               {/* <span>•</span> */}
               <div className="tags flex items-center space-x-1 text-gray-400 font-semibold" style={{ fontSize: ".675rem" }}>
-                <a href="" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">English</a>
-                <a href="" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Action</a>
-                <a href="" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Multiplayer</a>
-                <a href="" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Role-Playing</a>
+                <a href="#" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">English</a>
+                <a href="#" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Action</a>
+                <a href="#" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Multiplayer</a>
+                <a href="#" className="tag px-3 py-1 leading-none rounded-full bg-gray-600">Role-Playing</a>
               </div>
             </div>
           </div>
@@ -218,7 +234,7 @@ const ChannelContent = () => {
             <Button>Subscribe</Button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -226,7 +242,7 @@ const ChannelContent = () => {
 const Chat = () => {
   return (
     <div className="z-10 relative inset-y-0 left-0 sm:w-12 md:w-80 border-l border-gray-600 bg-gray-700 hidden md:block">
-      <div className="wrapper flex flex-col h-full">
+      <motion.div variants={fadeIn} className="wrapper flex flex-col h-full">
         <div className="header p-2 flex items-center justify-center md:justify-between border-b border-gray-600">
             <button className="p-2 hidden md:block rounded-lg transition ease-in-out duration-300 hover:bg-gray-600">
               <div className="w-4 h-4 flex items-center justify-center">
@@ -259,7 +275,7 @@ const Chat = () => {
               </div>
             </div>
           </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
